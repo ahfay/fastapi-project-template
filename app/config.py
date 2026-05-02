@@ -1,8 +1,11 @@
 from pydantic_settings import BaseSettings
+from typing import ClassVar
+from pytz import timezone
 
 class AppConfig(BaseSettings):
-    test_api: str
-    db_url: str
+    TEST_API: str
+    DB_URL: str
+    TIMEZONE: ClassVar[timezone] = timezone("Asia/Jakarta")
 
 
     class Config:
